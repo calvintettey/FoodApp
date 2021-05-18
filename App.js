@@ -1,5 +1,8 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import "react-native-gesture-handler";
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 import { StyleSheet, Text, View } from "react-native";
 import AppLoading from "expo-app-loading";
 import {
@@ -10,6 +13,10 @@ import {
   Montserrat_700Bold,
 } from "@expo-google-fonts/montserrat";
 import colors from "./assets/colors/colors";
+import Home from "./components/Home";
+import Details from "./components/Details";
+
+const Stack = createStackNavigator();
 
 export default function App() {
   let [fontsLoaded, error] = useFonts({
@@ -20,28 +27,24 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    return <AppLoading />
+    return <AppLoading />;
   }
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>
-        Open up App.js to start working on your app!
-      </Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={Home}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={Details}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  text: {
-    fontFamily: "Bold",
-    color: colors.secondary,
-  },
-});
