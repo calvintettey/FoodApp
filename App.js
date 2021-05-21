@@ -1,9 +1,7 @@
-import { StatusBar } from "expo-status-bar";
 import "react-native-gesture-handler";
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { StyleSheet, Text, View } from "react-native";
 import AppLoading from "expo-app-loading";
 import {
   useFonts,
