@@ -6,7 +6,11 @@ This is a food delivery app concept with an overview of food types and their det
 * Expo 
 * Expo Vector Icons
 
+## Demo
+
+![Food Delivery App Demo](assets/foodappdemo.gif)
+
 
 ## Screenshots
 
-![Expense Tracker App Scrnsht 1](assets/scrnshts.png)
+![Food Delivery App Scrnsht 1](assets/scrnshts.png)
